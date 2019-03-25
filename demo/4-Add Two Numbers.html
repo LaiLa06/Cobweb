@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //https://leetcode-cn.com/problems/add-two-numbers/
+        /**
+         * Definition for singly-linked list.
+         * function ListNode(val) {
+         *     this.val = val;
+         *     this.next = null;
+         * }
+         */
+        /**
+         * @param {ListNode} l1
+         * @param {ListNode} l2
+         * @return {ListNode}
+         */
+        function ListNode(val) {
+            this.val = val;
+            this.next = null;
+        }
+        var addTwoNumbers = function (l1, l2) {
+            let curr = null, isForward = 0, head = null;
+            while (l1 || l2 || isForward) {
+                let sum = 0;
+                if (l1) { sum += l1.val; l1 = l1.next }
+                if (l2) { sum += l2.val; l2 = l2.next }
+                if (curr) {
+                    curr.next = new ListNode(sum);
+                    curr = curr.next;
+                } else {
+                    curr = head = new ListNode(sum);
+                }
+                if (sum % 10 + isForward >= 10) {
+                    sum = sum % 10 + isForward;
+                    curr.val = sum % 10;
+                } else {
+                    curr.val = sum % 10 + isForward;
+                }
+                sum < 10 ? isForward = 0 : isForward = 1;
+                isForward == 1 ? curr.next = new ListNode(isForward) : ''
+            }
+            return head
+        };
+    </script>
+</body>
+
+</html>
