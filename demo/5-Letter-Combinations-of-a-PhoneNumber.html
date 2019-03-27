@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        给定一个仅包含数字 2-9 的字符串，返回所有它能表示的字母组合。
+
+        给出数字到字母的映射如下（与电话按键相同）。注意 1 不对应任何字母。
+        输入："23"
+        输出：["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"].
+        输入："234"
+        输出：["adg","adh","adi","aeg","aeh","aei","afg","afh","afi","bdg","bdh","bdi","beg","beh","bei","bfg","bfh","bfi","cdg","cdh","cdi","ceg","ceh","cei","cfg","cfh","cfi"].
+    </div>
+    <div>
+        <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Telephone-keypad2.svg/200px-Telephone-keypad2.svg.png"
+            alt="">
+    </div>
+    <script>
+        //https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/
+        /* 
+        思路解析
+        1. 空字符返回[]
+        2. 只有一项，返回['a','b','c']
+        3. 2项以上...,
+        4. 规律：后一项数组中的每一个往前一项的数组每一项添加，相当于每次处理两项，前一项处理的结果作为下一项处理的第一项，递归解决
+        */
+        var letterCombinations = function (digits) {
+            let result = [], target = [], map = ['abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz'], spell = null;
+            if (!digits.length) return result     // 
+            if (digits.length == 1) return map[digits[0] - 2].split('');
+            digits = digits.split('');
+            for (let i = 0; i < digits.length; i++) {
+                target.push(map[digits[i] - 2])
+            }
+            spell = (list) => {
+                let temp = [];
+                for (let k = 0; k < list[0].length; k++) {
+                    for (let j = 0; j < list[1].length; j++) {
+                        temp.push(`${list[0][k]}${target[1][j]}`);
+                    }
+                }
+                list.splice(0, 2, temp);
+                list.length >= 2 ? spell(list) : result = list[0];
+            }
+            spell(target)
+            return result
+        };
+    </script>
+</body>
+
+</html>
