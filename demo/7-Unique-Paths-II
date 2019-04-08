@@ -1,0 +1,22 @@
+/**
+ * @param {number[][]} obstacleGrid
+ * @return {number}
+ */
+ //https://leetcode-cn.com/problems/unique-paths-ii/submissions/
+var uniquePathsWithObstacles = function(arr) {
+    let r = [],y =arr[0].length ,x = arr.length;
+   if(arr[0][0]) {return 0 }  
+    for (let i = 0; i < x; i++) {
+      r[i] = [];
+      for (let j = 0; j < y; j++) {
+        if(arr[i][j]){r[i][j]=0}
+        else{
+            if(i==0 && j==0){r[0][0]=1;continue}
+            if(i==0 && j>0){ r[i][j] = r[0][j-1];continue}
+            if(i>0 && j==0){ r[i][j] = r[i-1][j];continue}   
+             r[i][j]=r[i - 1][j] + r[i][j - 1]   
+        }
+      }
+    }
+    return r[x - 1][y - 1]
+};
