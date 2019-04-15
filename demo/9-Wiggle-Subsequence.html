@@ -12,20 +12,20 @@
     <script>
         //   https://leetcode-cn.com/problems/wiggle-subsequence/submissions/
         var wiggleMaxLength = function (nums) {
-            let up = 1, down = 1, len = nums.length;
+            let x = 1, y = 1, len = nums.length;
             if (len < 2) { return len }
             for (let i = 1; i < nums.length; i++) {
                 if (nums[i - 1] > nums[i]) {
-                    up = down + 1
+                    x = y + 1
                 }
                 if (nums[i - 1] < nums[i]) {
-                    down = up + 1
+                    y = x + 1
                 }
             }
-            if (up > down) {
-                return up
+            if (x > y) {
+                return x
             } else {
-                return down
+                return y
             }
         };
     </script>
