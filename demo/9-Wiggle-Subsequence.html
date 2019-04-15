@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //   https://leetcode-cn.com/problems/wiggle-subsequence/submissions/
+        var wiggleMaxLength = function (nums) {
+            let up = 1, down = 1, len = nums.length;
+            if (len < 2) { return len }
+            for (let i = 1; i < nums.length; i++) {
+                if (nums[i - 1] > nums[i]) {
+                    up = down + 1
+                }
+                if (nums[i - 1] < nums[i]) {
+                    down = up + 1
+                }
+            }
+            if (up > down) {
+                return up
+            } else {
+                return down
+            }
+        };
+    </script>
+</body>
+
+</html>
