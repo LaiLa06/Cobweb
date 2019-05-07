@@ -1,3 +1,4 @@
+```
 /**
  * Definition for a binary tree node.
  * function TreeNode(val) {
@@ -27,3 +28,5 @@ var inorderTraversal = function(root) {
     fun(root)
     return arr
 };
+
+```

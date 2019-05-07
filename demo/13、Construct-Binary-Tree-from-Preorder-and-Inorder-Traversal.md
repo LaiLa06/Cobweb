@@ -1,3 +1,4 @@
+```
 /**
  * Definition for a binary tree node.
  * function TreeNode(val) {
@@ -19,3 +20,5 @@ var buildTree = function(preorder, inorder) {
     target.right = buildTree(preorder.slice(1+index),inorder.slice(index+1));
     return target
 };
+
+```
