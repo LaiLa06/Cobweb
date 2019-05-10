@@ -6,15 +6,13 @@
 
 [42. Trapping Rain Water](https://github.com/LaiLa06/leetCode/blob/master/demo/42.%20Trapping-Rain-Water.md)
 
-[41. First Missing Positive](https://github.com/LaiLa06/leetCode/blob/master/demo/13%E3%80%81Construct-Binary-Tree-from-Preorder-and-Inorder-Traversal.md)
-
 [4. Median of Two Sorted Arrays](https://github.com/LaiLa06/leetCode/blob/master/demo/8-Median-of-Two-Sorted-Arrayss.html)
 
 [226. Invert Binary Tree](https://github.com/LaiLa06/leetCode/blob/master/demo/11%E3%80%81Invert-Binary-Tree.html)
 
 [41. First Missing Positive](https://github.com/LaiLa06/leetCode/blob/master/demo/14%E3%80%81First-Missing-Positive.1.md)
 
-[164. Maximum Gap](https://leetcode-cn.com/problems/maximum-gap/)
+[164. Maximum Gap](https://github.com/LaiLa06/leetCode/blob/master/demo/164.%20Maximum%20Gap.md)
 
 ### 中等
 
